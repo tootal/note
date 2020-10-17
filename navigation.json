@@ -1,0 +1,48 @@
+{
+    "navigation":
+    [
+        {
+            "text": "首页",
+            "target": "index.md",
+            "toc": false
+        },
+        {
+            "text": "算法竞赛",
+            "target": "算法竞赛/_vnote.json",
+            "navi": true,
+            "navi_index": "索引.md"
+        },
+        {
+            "text": "记录",
+            "target": "记录/_vnote.json",
+            "navi": true,
+            "navi_index": "软件工具.md"
+        },
+        {
+            "text": "数据库",
+            "target": "数据库系统概论/_vnote.json",
+            "navi": true,
+            "navi_index": "20200331数据库系统概论前三章复习.md"
+        },
+        {
+            "text": "数据结构",
+            "target": "数据结构课程/_vnote.json",
+            "navi": true,
+            "navi_index": "20200102大作业.md"
+        },
+        {
+            "text": "Python程序设计",
+            "target": "Python程序设计/_vnote.json",
+            "navi": true,
+            "navi_index": "20191025期末综合实验.md"
+        }
+    ],
+    "actions":
+    [
+        {
+            "text": "Github",
+            "icon": "https://github.githubassets.com/favicons/favicon.png",
+            "target": "https://github.com/tootal"
+        }
+    ]
+}
