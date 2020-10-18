@@ -6,7 +6,7 @@
             "attachments": [
             ],
             "created_time": "2020-10-17T06:03:25Z",
-            "modified_time": "2020-10-17T12:41:40Z",
+            "modified_time": "2020-10-17T15:46:11Z",
             "name": "20201017周六训练赛.md",
             "tags": [
             ]
@@ -881,6 +881,16 @@
             "created_time": "2019-10-12T03:43:46Z",
             "modified_time": "2019-10-12T03:43:46Z",
             "name": "20181013训练赛.md",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "attachments": [
+            ],
+            "created_time": "2020-10-18T02:36:33Z",
+            "modified_time": "2020-10-18T03:37:25Z",
+            "name": "20201018CCPC秦皇岛.md",
             "tags": [
             ]
         }
