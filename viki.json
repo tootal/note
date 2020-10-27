@@ -13,7 +13,7 @@
         "linkify": false,
         "typographer": false,
         "lang_prefix": "lang-",
-        "image_caption": true,
+        "image_caption": false,
         "plantuml_server": "https://www.plantuml.com/plantuml",
         "plantuml_format": "svg",
         "code_block_line_number": false
