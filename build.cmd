@@ -1,5 +1,5 @@
 @echo off
-python 绠楁硶绔炶禌\姣旇禌\order.py
+python 算法竞赛\比赛\order.py
 qshell qupload .\upload.conf
 git add .
 git commit -m "update"
