@@ -1,5 +1,5 @@
 # Dijkstra算法
-例题：[20C - 6](https://codeforces.com/contest/20/submission/67265021)
+例题：[C. Dijkstra?](https://codeforces.com/contest/20/problem/C)
 
 Dijkstra算法是单源最短路径算法，适用于无负边权的情况，堆优化下复杂度为$O(V^2+E)$。
 
