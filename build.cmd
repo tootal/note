@@ -1,5 +1,5 @@
 @echo off
-python 算法竞赛\比赛\order.py
+python 绠楁硶绔炶禌\姣旇禌\order.py
 qshell qupload .\upload.conf 1>NUL
 qshell cdnrefresh --dirs -i refresh_url.txt
 git add .
