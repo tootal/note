@@ -64,6 +64,6 @@ jobs:
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: pdf # The branch the action should deploy to.
-        FOLDER: ./算法竞赛/build # The folder the action should deploy.
+        FOLDER: 算法竞赛/build # The folder the action should deploy.
         CLEAN: false # Automatically remove deleted files from the deploy branch
 
