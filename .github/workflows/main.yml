@@ -54,7 +54,8 @@ jobs:
       run: |
         mkdir -p ~/.pandoc/templates
         cp pandoc/algo.latex ~/.pandoc/templates/
-        sh pandoc/gen.sh
+        cd 算法竞赛
+        sh ../pandoc/gen.sh
         mkdir build
         cp template.pdf build/template.pdf
 
