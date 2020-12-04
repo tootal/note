@@ -26,6 +26,7 @@ low[u]表示追溯值，记录以当前结点为根搜索时能访问的最小df
 
 v未被访问：继续对v进行深度搜索。在回溯过程中，用low[v]更新low[u]  。因为存在从 u 到 v 的直接路径，所以 v 能够回溯到的已经在栈中的结点，  u也一定能够回溯到。
  v被访问过，已经在栈中：即已经被访问过，根据 low 值的定义（能够回溯到的最早的已经在栈中的结点），则用 dfn[v] 更新 low[u] 。
+ （对于此处为什么要用dfn[v]更新而不是low[v]更新，可以参考[这里](https://cs.stackexchange.com/questions/96635/tarjans-scc-example-showing-necessity-of-lowlink-definition-and-calculation-r)）
  v被访问过，已不在在栈中：说明 v 已搜索完毕，其所在连通分量已被处理，所以不用对其做操作。
 
 上述算法写成C++代码如下所示（未测试）
