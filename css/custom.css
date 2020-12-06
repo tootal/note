@@ -1,0 +1,9 @@
+#viki-navbar{
+	background-color: #996;
+}
+.viki-navbar .navbar-nav .nav-link{
+	color: rgba(255,255,255,.8);
+}
+.viki-navbar .navbar-nav .nav-link:hover{
+	color: rgba(255,255,255,.5);
+}
