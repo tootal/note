@@ -59,13 +59,13 @@ jobs:
       with:
         tag_name: ${{ github.ref }}
         release_name: ${{ github.ref }}
-     - name: Upload PDF Asset
-        id: upload-release-asset 
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: 算法竞赛/模板/template.pdf
-          asset_name: template.pdf
-          asset_content_type: application/pdf
+    - name: Upload PDF Asset
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: 算法竞赛/模板/template.pdf
+        asset_name: template.pdf
+        asset_content_type: application/pdf
