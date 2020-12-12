@@ -53,9 +53,9 @@ jobs:
     - name: Generate PDF
       run: |
         mkdir -p ~/.pandoc/templates
+        cd 算法竞赛/模板
         cp pandoc/algo.latex ~/.pandoc/templates/
-        cd 算法竞赛
-        sh ../pandoc/gen.sh
+        sh pandoc/gen.sh
         mkdir build
         cp template.pdf build/template.pdf
 
