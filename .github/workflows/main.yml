@@ -32,14 +32,23 @@ jobs:
         wget -q "https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb"
         sudo dpkg -i pandoc-2.7.3-1-amd64.deb
         rm -rf *.deb
-
-    - name: Install Fonts
+    - name: Cache font
+      id: cache-font
+      uses: actions/cache@v2
+      with:
+        path: /tmp/adobefont
+        key: ${{ runner.os }}-font
+    - name: Download Fonts
+      if: steps.cache-font.outputs.cache-hit != 'true'
       run: |
         mkdir -p /tmp/adodefont
         cd /tmp/adodefont
         wget -q -O source-code-pro.zip https://github.com/adobe-fonts/source-code-pro/archive/2.030R-ro/1.050R-it.zip
         wget -q -O source-han-serif.zip https://github.com/adobe-fonts/source-han-serif/archive/1.001R.zip
         wget -q -O source-han-sans.zip https://github.com/adobe-fonts/source-han-sans/archive/2.001R.zip
+    - name: Install Fonts
+      run: |
+        cd /tmp/adodefont
         unzip -q source-code-pro.zip -d source-code-pro
         unzip -q source-han-serif.zip -d source-han-serif
         unzip -q source-han-sans.zip -d source-han-sans
