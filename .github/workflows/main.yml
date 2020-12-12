@@ -1,34 +1,19 @@
 name: Build
-
 on:
   push:
     branches:
       - master
-
 jobs:
   build:
-
     runs-on: ubuntu-20.04
-
     steps:
-
-    - name: Checkout
-      uses: actions/checkout@v2.3.1 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
-      with:
-        persist-credentials: false
-
-    - uses: actions/setup-python@v1
-      with:
-        python-version: '3.x' # Version range or exact version of a Python version to use, using semver version range syntax.
-        architecture: 'x64' # (x64 or x86)
-
-    - name: Install Pandoc
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Install pandoc with texlive
       run: |
+        sudo apt install -y texlive texlive-xetex latexmk wget
         mkdir -p /tmp/pandoc
         cd /tmp/pandoc
-        python3 -m pip --no-cache-dir install setuptools wheel
-        python3 -m pip --no-cache-dir install pandocfilters Pygments
-        sudo apt install -y texlive texlive-xetex latexmk wget
         wget -q "https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb"
         sudo dpkg -i pandoc-2.7.3-1-amd64.deb
         rm -rf *.deb
@@ -36,13 +21,14 @@ jobs:
       id: cache-font
       uses: actions/cache@v2
       with:
-        path: /tmp/adobefont
-        key: ${{ runner.os }}-adobe-fonts
-    - name: Download Fonts
+        path: adobefont
+        key: ${{ runner.os }}-adobefont
+    - name: Download fonts
       if: steps.cache-font.outputs.cache-hit != 'true'
       run: |
-        mkdir -p /tmp/adodefont
-        cd /tmp/adodefont
+        pwd
+        mkdir adobefont
+        cd adobefont
         wget -q -O source-code-pro.zip https://github.com/adobe-fonts/source-code-pro/archive/2.030R-ro/1.050R-it.zip
         wget -q -O source-han-serif.zip https://github.com/adobe-fonts/source-han-serif/archive/1.001R.zip
         wget -q -O source-han-sans.zip https://github.com/adobe-fonts/source-han-sans/archive/2.001R.zip
@@ -50,29 +36,38 @@ jobs:
         unzip -q source-han-serif.zip -d source-han-serif
         unzip -q source-han-sans.zip -d source-han-sans
         rm -rf source-code-pro.zip source-han-serif.zip source-han-sans.zip
-    - name: Install Fonts
+    - name: Install fonts
       run: |
-        cd /tmp/adodefont
+        pwd
+        cd adodefont
         mkdir -p ~/.fonts
         cp -v source-code-pro/*/OTF/*.otf ~/.fonts/
         cp -v source-han-serif/*/SubsetOTF/*/*.otf ~/.fonts/
         cp -v source-han-sans/*/SubsetOTF/*/*.otf ~/.fonts/
         fc-cache -f
-
     - name: Generate PDF
       run: |
         mkdir -p ~/.pandoc/templates
         cd 算法竞赛/模板
         cp pandoc/algo.latex ~/.pandoc/templates/
         sh pandoc/gen.sh
-        mkdir build
-        cp template.pdf build/template.pdf
-
-    - name: Release
-      uses: JamesIves/github-pages-deploy-action@3.6.2
-      with:
+    - name: Create release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: pdf # The branch the action should deploy to.
-        FOLDER: 算法竞赛/模板/build # The folder the action should deploy.
-        CLEAN: false # Automatically remove deleted files from the deploy branch
-
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: ${{ github.ref }}
+        body: |
+          tootal template pdf release.
+     - name: Upload PDF Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: 算法竞赛/模板/template.pdf
+          asset_name: template.pdf
+          asset_content_type: application/pdf
