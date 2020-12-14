@@ -45,8 +45,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.ref }}
-        release_name: ${{ github.ref }}
+        tag_name: ${{ github.sha }}
+        release_name: Continuous Build
     - name: Upload PDF Asset
       id: upload-release-asset 
       uses: actions/upload-release-asset@v1
