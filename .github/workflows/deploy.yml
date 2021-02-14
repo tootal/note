@@ -15,4 +15,6 @@ jobs:
           sudo npm i -g @cloudbase/cli
           tcb login --apiKeyId ${{ secrets.SECRET_ID }} --apiKey ${{ secrets.SECRET_KEY }}
           sudo rm -rf .git .github
+          pwd
+          ls
           tcb hosting deploy . -e ${{ secrets.ENV_ID }} -r ap-guangzhou
