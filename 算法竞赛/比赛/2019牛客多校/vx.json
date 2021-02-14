@@ -3,106 +3,97 @@
     "files": [
         {
             "attachment_folder": "",
-            "attachments": [
-            ],
             "created_time": "2019-10-12T03:43:46Z",
-            "modified_time": "2020-01-29T05:40:17Z",
+            "id": "0",
+            "modified_time": "2019-10-12T03:43:46Z",
             "name": "20190817牛客多校第十场.md",
             "tags": [
             ]
         },
         {
             "attachment_folder": "",
-            "attachments": [
-            ],
             "created_time": "2019-10-12T03:43:46Z",
-            "modified_time": "2020-01-29T05:39:20Z",
+            "id": "0",
+            "modified_time": "2019-10-12T03:43:46Z",
             "name": "20190815牛客多校第九场.md",
             "tags": [
             ]
         },
         {
             "attachment_folder": "",
-            "attachments": [
-            ],
             "created_time": "2019-10-12T03:43:46Z",
-            "modified_time": "2020-01-29T05:38:28Z",
+            "id": "0",
+            "modified_time": "2019-10-12T03:43:46Z",
             "name": "20190810牛客多校第八场.md",
             "tags": [
             ]
         },
         {
             "attachment_folder": "",
-            "attachments": [
-            ],
             "created_time": "2019-10-12T03:43:46Z",
-            "modified_time": "2020-01-29T05:37:51Z",
+            "id": "0",
+            "modified_time": "2019-10-12T03:43:46Z",
             "name": "20190808牛客多校第七场.md",
             "tags": [
             ]
         },
         {
             "attachment_folder": "",
-            "attachments": [
-            ],
             "created_time": "2019-10-12T03:43:46Z",
-            "modified_time": "2020-01-29T05:36:08Z",
+            "id": "0",
+            "modified_time": "2019-10-12T03:43:46Z",
             "name": "20190801牛客多校第五场.md",
             "tags": [
             ]
         },
         {
             "attachment_folder": "",
-            "attachments": [
-            ],
             "created_time": "2019-10-12T03:43:46Z",
-            "modified_time": "2020-01-29T05:37:12Z",
+            "id": "0",
+            "modified_time": "2019-10-12T03:43:46Z",
             "name": "20190803牛客多校第六场.md",
             "tags": [
             ]
         },
         {
             "attachment_folder": "",
-            "attachments": [
-            ],
             "created_time": "2019-10-12T03:43:46Z",
-            "modified_time": "2020-01-29T05:35:46Z",
+            "id": "0",
+            "modified_time": "2019-10-12T03:43:46Z",
             "name": "20190727牛客多校第四场.md",
             "tags": [
             ]
         },
         {
             "attachment_folder": "",
-            "attachments": [
-            ],
             "created_time": "2019-10-12T03:43:46Z",
-            "modified_time": "2020-01-29T05:35:21Z",
+            "id": "0",
+            "modified_time": "2019-10-12T03:43:46Z",
             "name": "20190725牛客多校第三场.md",
             "tags": [
             ]
         },
         {
             "attachment_folder": "",
-            "attachments": [
-            ],
             "created_time": "2019-10-12T03:43:46Z",
-            "modified_time": "2020-01-29T05:34:50Z",
+            "id": "0",
+            "modified_time": "2019-10-12T03:43:46Z",
             "name": "20190720牛客多校第二场.md",
             "tags": [
             ]
         },
         {
             "attachment_folder": "",
-            "attachments": [
-            ],
             "created_time": "2019-10-12T03:43:46Z",
-            "modified_time": "2020-01-29T05:34:30Z",
+            "id": "0",
+            "modified_time": "2019-10-12T03:43:46Z",
             "name": "20190718牛客多校第一场.md",
             "tags": [
             ]
         }
     ],
-    "sub_directories": [
+    "folders": [
     ],
+    "id": "0",
     "version": "1"
 }

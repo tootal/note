@@ -8,31 +8,31 @@
         },
         {
             "text": "算法竞赛",
-            "target": "算法竞赛/_vnote.json",
+            "target": "算法竞赛/vx.json",
             "navi": true,
             "navi_index": "比赛/索引.md"
         },
         {
             "text": "记录",
-            "target": "记录/_vnote.json",
+            "target": "记录/vx.json",
             "navi": true,
             "navi_index": "资源索引.md"
         },
         {
             "text": "数据库",
-            "target": "数据库系统概论/_vnote.json",
+            "target": "数据库系统概论/vx.json",
             "navi": true,
             "navi_index": "20200331数据库系统概论前三章复习.md"
         },
         {
             "text": "数据结构",
-            "target": "数据结构课程/_vnote.json",
+            "target": "数据结构课程/vx.json",
             "navi": true,
             "navi_index": "20200102大作业.md"
         },
         {
             "text": "Python程序设计",
-            "target": "Python程序设计/_vnote.json",
+            "target": "Python程序设计/vx.json",
             "navi": true,
             "navi_index": "20191025期末综合实验.md"
         }

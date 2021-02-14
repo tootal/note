@@ -1,7 +1,7 @@
 {
     "brand": "头头笔记",
     "title": "头头笔记",
-    "favicon": "https://tootal.xyz/images/favicon.ico",
+    "favicon": "favicon.ico",
     "footer": "@2020 tootal",
     "show_suffix": false,
     "load_before_search": true,
