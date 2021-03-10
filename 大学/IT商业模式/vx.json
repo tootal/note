@@ -1,0 +1,28 @@
+{
+    "created_time": "2021-02-28T11:38:50Z",
+    "files": [
+        {
+            "attachment_folder": "",
+            "created_time": "2020-11-29T10:53:03Z",
+            "id": "35",
+            "modified_time": "2021-03-10T11:51:57Z",
+            "name": "IT商业模式作业.md",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "created_time": "2020-11-30T11:21:15Z",
+            "id": "41",
+            "modified_time": "2020-11-30T11:21:15Z",
+            "name": "IT商业模式作业正文.md",
+            "tags": [
+            ]
+        }
+    ],
+    "folders": [
+    ],
+    "id": "34",
+    "modified_time": "2021-02-28T11:38:50Z",
+    "version": "1"
+}

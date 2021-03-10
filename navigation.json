@@ -19,8 +19,13 @@
             "navi_index": "资源索引.md"
         },
         {
-            "text": "大学课程",
-            "target": "大学课程/vx.json",
+            "text": "大学",
+            "target": "大学/vx.json",
+            "navi": true
+        },
+        {
+            "text": "LeetCode",
+            "target": "LeetCode/vx.json",
             "navi": true
         }
     ],
