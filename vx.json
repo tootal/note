@@ -43,6 +43,9 @@
             "name": "vx_recycle_bin"
         },
         {
+            "name": "LeetCode"
+        },
+        {
             "name": "算法竞赛"
         },
         {
@@ -50,9 +53,6 @@
         },
         {
             "name": "大学"
-        },
-        {
-            "name": "LeetCode"
         }
     ],
     "id": "1",
