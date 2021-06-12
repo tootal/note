@@ -13,6 +13,11 @@ This is an index page.
 
 
 # 更新记录
+
+## 20210613
+部署到Github Page。
+网址：https://note.tootal.xyz
+
 ## 20210214
 升级到VNote3
 
