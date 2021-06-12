@@ -40,9 +40,6 @@
     ],
     "folders": [
         {
-            "name": "vx_recycle_bin"
-        },
-        {
             "name": "LeetCode"
         },
         {
@@ -53,6 +50,9 @@
         },
         {
             "name": "大学"
+        },
+        {
+            "name": "vx_recycle_bin"
         }
     ],
     "id": "1",
