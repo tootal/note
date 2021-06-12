@@ -1,0 +1,120 @@
+有些需要更高的C++特性，一般在C++11。  
+
+**即使不使用，看看这些代码也能体会到很多注意点。**
+
+# 头文件
+
+```cpp
+#include <bits/stdc++.h>
+```
+
+包含常见的所有头文件。基本上所有评测系统均支持。需要选G++编译器。  
+
+
+* POJ不支持
+
+# 命名空间
+标准  
+```cpp
+using namespace std;
+```
+
+pb_ds库  （平板电视）  
+```cpp
+using namespace __gnu_pbds;
+```
+
+
+# 宏定义
+不是很建议使用。  
+但有些真的很好用。  
+
+
+## for循环
+参考
+[1](https://blog.csdn.net/czyt1988/article/details/52812797)
+[2](https://en.cppreference.com/w/cpp/types/decay)
+
+
+```cpp
+#define FOR(i,x,y) for(decay<decltype(y)>::type i=(x),_##i=(y);i<=_##i;++i)
+#define FORD(i,x,y) for(decay<decltype(x)>::type i=(x),_##i=(y);i>=_##i;--i)
+```
+
+* `decltype`用于获取变量类型
+* `decay`用来退化变量，转换为基本变量类型
+* `_##i`用来连接左右字符，构造变量`_i`
+* 变量`_i`是用来避免循环条件中出现复杂计算，如`for(int i=0;i<strlen(s);i++)`
+* `decltype`选用了不同的类型是因为，循环上下界的类型可能不同！要选更大的！如下界为`int`，上界为`long long`
+
+
+## 输出调试
+简单的查看变量  
+```cpp
+#define dbg(x) cout<<"["<<#x<<" = "<<x<<"]"
+```
+
+* `#x` 用来把`x`转换为字符串
+
+这个真的也没啥太大的用处。。。  
+接下来是时候展示Reek的力量了。  
+
+封装不定参数的`cout`    
+```cpp
+template <typename T>void err(T x){cout<<x;}
+template<typename T,typename... A>void err(T a,A... x){cout<<a<<',';err(x...);}
+```
+
+接着改进`dbg`的宏定义。
+```cpp
+#define dbg(x...) do{cout<<"["<<#x<<" = ";err(x);cout<<"]";}while(0)
+```
+
+[do while(0)的作用](https://www.jianshu.com/p/99efda8dfec9)  
+
+还可以继续添加对模板容器的支持。  
+```cpp
+template<template<typename...> class T,typename t>
+void err(T<t> a){for(auto v: a)cout<<v<<' ';}
+```
+实例程序：（选择排序）  
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+#define FOR(i,x,y) for(decay<decltype(y)>::type i=(x),_##i=(y);i<=_##i;++i)
+#define FORD(i,x,y) for(decay<decltype(x)>::type i=(x),_##i=(y);i>=_##i;--i)
+#define dbg(x...) do{cout<<"["<<#x<<" = ";err(x);cout<<"]";}while(0)
+template <typename T>void err(T x){cout<<x;}
+template<typename T,typename... A>void err(T a,A... x){cout<<a<<',';err(x...);}
+template<template<typename...> class T,typename t>
+void err(T<t> a){for(auto v: a)cout<<v<<' ';}
+int main(){
+	int n;
+	cin>>n;
+	vector<int> a(n);
+	FOR(i,0,n-1)cin>>a[i];
+	FOR(i,0,n-2){
+		FOR(j,i+1,n-1){
+			dbg(i,j);dbg(a);
+			if(a[i]>a[j])swap(a[i],a[j]);
+		}
+	}
+	return 0;
+}
+```
+输入：  
+> 5  
+> 4 5 2 1 3  
+
+输出：  
+> [i,j = 0,1][a = 4 5 2 1 3 ]  
+> [i,j = 0,2][a = 4 5 2 1 3 ]  
+> [i,j = 0,3][a = 2 5 4 1 3 ]  
+> [i,j = 0,4][a = 1 5 4 2 3 ]  
+> [i,j = 1,2][a = 1 5 4 2 3 ]  
+> [i,j = 1,3][a = 1 4 5 2 3 ]  
+> [i,j = 1,4][a = 1 2 5 4 3 ]  
+> [i,j = 2,3][a = 1 2 5 4 3 ]  
+> [i,j = 2,4][a = 1 2 4 5 3 ]  
+> [i,j = 3,4][a = 1 2 3 5 4 ]  
+
